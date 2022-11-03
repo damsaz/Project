@@ -1,0 +1,73 @@
+ForumPost
+- Id
+- UserId
+- CreatedDate
+- ThreadId
+- QuotedPostId
+- Text
+- Tags (Many2Many)
+- StateId
+
+Thread
+- Id
+- Name
+- CategoryId
+- UserId
+- CreatedDate
+- StateId
+
+Category
+- Id
+- Name
+- UserId
+- CreatedDate
+- StateId
+
+NewsPost
+- Id
+- UserId
+- CreatedDate
+- Header
+- Tags (Many2Many)
+- Text
+- EventDate
+- StateId
+
+PrivateMessage
+- Id
+- SenderId
+- ReceiverId
+- CreatedDate
+- Header
+- Text
+- ReadDate
+- ParentId (if is reply on other PM)
+- StateId
+
+Tag
+- Id
+- Name
+
+User // Identity
+- Id
+- UserName // Nickname
+- FirstName
+- LastName
+- Email
+- CreatedDate
+- CreatedById
+- Password //hashed
+- LastNewsRead
+- StateId
+
+Role // Identity
+- Id
+- Name
+
+- Sysadmin
+- Admin
+- User
+
+- State // Enum?
+- Id     
+- Name  // Active/Inactive
